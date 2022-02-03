@@ -5,13 +5,16 @@ const toDoList = document.getElementById('todo-list')
 submitBtn.addEventListener('click', evt => {
   const li = document.createElement('li')
   const inp = document.querySelector('input')
+  
+  if (inp.value.trim() != ''){ 
+
   li.textContent = inp.value
-  document.querySelector('ul').appendChild(li)
+  toDoList.appendChild(li)
+  }
 }
 )
 
-// const toDoItem = document.querySelectorAll('li')
 
-// toDoItem.addEventListener('click', evt=> {
-
-// })
+toDoList.addEventListener('click', function(e)  {
+  e.target.remove();
+})
